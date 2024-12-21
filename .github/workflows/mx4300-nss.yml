@@ -51,6 +51,9 @@ jobs:
                && echo "CONFIG_PACKAGE_collectd-mod-thermal=y" >> .config 
                && echo "CONFIG_PACKAGE_luci-app-temp-status=y" >> .config 
                && echo "CONFIG_FEED_custom_packages=n" >> .config
+               && echo "CONFIG_TARGET_qualcommax=y" >> .config
+               && echo "CONFIG_TARGET_qualcommax_ipq807x=y" >> .config
+               && echo "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_linksys_mx4300=y" >> .config
 
             - name: Build Config
               run: make defconfig V=s -j$(nproc)
